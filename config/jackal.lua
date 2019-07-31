@@ -39,7 +39,7 @@ options = {
   odometry_sampling_ratio = 0.5,
   fixed_frame_pose_sampling_ratio = 0.5,
   imu_sampling_ratio = 1.,
-  landmarks_sampling_ratio = 1.,
+  landmarks_sampling_ratio = 0.5,
 }
 
 MAP_BUILDER.use_trajectory_builder_2d = true
@@ -60,11 +60,11 @@ POSE_GRAPH.optimization_problem.huber_scale = 1e2
 -----------------TUNE THESE PARAMETERS FOR LOW LATENCY-------------------------------
 
 ------------Global SLAM------------
-POSE_GRAPH.optimize_every_n_nodes = 30 -- Decrease
+POSE_GRAPH.optimize_every_n_nodes = 10 -- Decrease
 MAP_BUILDER.num_background_threads = 4 -- Increase up to number of cores
-POSE_GRAPH.global_sampling_ratio = 0.00001 -- Decrease
-POSE_GRAPH.constraint_builder.sampling_ratio = 0.0001 -- Decrease
-POSE_GRAPH.constraint_builder.min_score = 0.82 -- Increase
+POSE_GRAPH.global_sampling_ratio = 1 -- Decrease
+POSE_GRAPH.constraint_builder.sampling_ratio = 1 -- Decrease
+POSE_GRAPH.constraint_builder.min_score = 0.5 -- Increase
 POSE_GRAPH.global_constraint_search_after_n_seconds = 20 -- Increase
 TRAJECTORY_BUILDER_2D.ceres_scan_matcher.ceres_solver_options.max_num_iterations = 5 -- Decrease
 

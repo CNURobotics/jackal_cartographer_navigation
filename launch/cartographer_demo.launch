@@ -22,7 +22,7 @@
           -configuration_basename jackal.lua"
       output="screen">
     <remap from="scan" to="front/scan" />
-    <remap from="odom" to="odometry/filtered" />
+    <remap from="odom" to="odom_filtered" />
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
@@ -38,6 +38,6 @@
   </node> -->
 
   <!--- Run Move Base -->
-  <include file="$(find jackal_navigation)/launch/include/move_base.launch" />
+  <!-- <include file="$(find jackal_navigation)/launch/include/move_base.launch" /> -->
 
 </launch>
